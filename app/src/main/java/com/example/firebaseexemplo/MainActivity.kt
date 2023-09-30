@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.buttonExecutar.setOnClickListener {
             //registoUtilizador()
-            //loginUtilizador()
+            loginUtilizador()
             //gravarDados()
             //atualizarDados()
             //removerDados()
@@ -218,7 +218,8 @@ class MainActivity : AppCompatActivity() {
         auth.signInWithEmailAndPassword(email, passw)
             .addOnSuccessListener {
                 binding.textResultado.text = "Login OK"
-                startActivity(Intent(this, PrincipalActivity::class.java))
+                //startActivity(Intent(this, PrincipalActivity::class.java))
+                startActivity(Intent(this, UploadImagemActivity::class.java))
             }
             .addOnFailureListener {
                 binding.textResultado.text = "Login Erro: ${it.message}"
